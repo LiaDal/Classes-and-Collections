@@ -23,7 +23,10 @@ class Student {
 
 const student = new Student('Иван', 'Иванов', 2020);
 
-console.log(worker.name); //выведет 'Иван'
-console.log(worker.surname); //выведет 'Иванов'
-console.log(worker.getFullName()); //выведет 'Иван Иванов'
-console.log(worker.year); //выведет 2020console.log(worker.getCourse()); //выведет 3 - третий курс, так как текущий год 2023
+console.log(student.name); //выведет 'Иван'
+console.log(student.surname); //выведет 'Иванов'
+console.log(student.getFullName()); //выведет 'Иван Иванов'
+console.log(student.year); //выведет 2020
+console.log(student.getCourse()); //выведет 3 - третий курс, так как текущий год 2023
+
+module.exports = Student;

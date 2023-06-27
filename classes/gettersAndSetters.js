@@ -29,3 +29,5 @@ console.log(worker.getSalary()); //выведет 310 - то есть 10*31
 worker.setRate(20); //увеличим ставку
 worker.setDays(10); //уменьшим дни
 console.log(worker.getSalary()); //выведет 200 - то есть 20*10
+
+module.exports = Worker;
