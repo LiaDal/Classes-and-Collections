@@ -7,10 +7,12 @@
  * @returns {Object}
  */
 
-export const intersection = (firstObject, secondObject) => {
+const intersection = (firstObject, secondObject) => {
     throw new Error(`Напишите здесь свое решение ${firstObject}, ${secondObject}`);
 };
 
 const data = {a: 1, b: 2};
 const data2 = {c: 1, b: 2};
 console.log(intersection(data, data2)); // { b: 2 }
+
+module.exports = intersection;
