@@ -14,7 +14,13 @@
  * @returns {string}
  */
 function hexToRgb(color) {
-    return undefined;
+    let rgb = color.replace('#', '');
+        rgb = rgb.match(new RegExp('(.{'+rgb.length/3+'})', 'g'));
+
+        for(let i = 0; i < rgb.length; i++)
+            rgb[i] = parseInt(rgb[i].length === 1 ? rgb[i]+rgb[i] : rgb[i], 16);
+
+        return 'rgb('+rgb.join(', ')+')';
 }
 
 module.exports = hexToRgb;

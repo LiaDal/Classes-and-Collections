@@ -13,7 +13,23 @@
  * @returns {boolean}
  */
 function has(path, object) {
-    return undefined;
+    if(typeof(object) !== "object") {
+        return false
+      } 
+      
+      if(!object.isPrototypeOf(Object)) {
+         return false 
+      }
+    
+      let currentObject = object;
+        for (let el of path) {
+            if (!currentObject.hasOwnProperty(el)) {
+                return false;
+            } 
+            currentObject = currentObject[el];
+        }
+    
+        return true; 
 }
 
 module.exports = has;

@@ -17,7 +17,8 @@
  * @returns {number}
  */
 function metro(x, y) {
-    return undefined;
+  let result = Math.min(13 - Math.abs(x-y), Math.abs(x-y))-1
+  return result
 }
 
 module.exports = metro;

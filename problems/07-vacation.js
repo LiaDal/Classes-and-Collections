@@ -14,7 +14,11 @@
  * @returns {string}
  */
 function vacation(date) {
-    return undefined;
+  const currentDate = new Date(date.split('.').reverse().join('.'))
+  currentDate.setDate(currentDate.getDate() + 15);
+  const result = new Date(currentDate)
+  const answer = result.toISOString().substring(0,10).split('-').reverse().join('.')
+  return answer
 }
 
 module.exports = vacation;

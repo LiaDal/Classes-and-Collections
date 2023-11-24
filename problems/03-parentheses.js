@@ -16,7 +16,21 @@
  * @returns {boolean}
  */
 function parentheses(value) {
-    return undefined;
+    if(value === '') {
+        return false 
+     }
+     const stack = [];
+     for (const el of value) {
+       if (el === '(') {
+         stack.push(el);
+       } else if (el === ')') {
+         if (!stack.pop()) {
+           return false;
+         }
+       }
+     }
+   
+     return stack.length === 0;
 }
 
 module.exports = parentheses;
