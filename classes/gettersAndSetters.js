@@ -4,7 +4,46 @@
  */
 
 class Worker {
+    #name;
+    #surname;
+    #rate;
+    #days;
+    
+  constructor(name, surname, rate, days) {
+    this.#name = name;
+    this.#surname = surname;
+    this.#rate = rate;
+    this.#days = days;    
+  }
+  
+  setRate(value){
+      return this.#rate * value
+  }
+  
+  setRate(value){
+    return this.#rate = value
+  }
+  
+  setDays(value){
+    return this.#days = value
+  }
 
+  getName(){
+    return this.#name;
+  }
+  getSurname(){
+    return this.#surname;
+  }
+  getRate(){
+    return this.#rate;
+  }
+  getDays(){
+    return this.#days;
+  }
+
+  getSalary() {
+    return this.#rate * this.#days;
+  }
 }
 
 const worker = new Worker('Иван', 'Иванов', 10, 31);

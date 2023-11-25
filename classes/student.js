@@ -17,8 +17,17 @@ class User {
     }
 }
 
-class Student {
-    // Ваш код...
+class Student extends User{
+    constructor(name, surname, year) {
+        super(name, surname);
+        this.year = year;
+    }
+
+    getCourse() {
+        let today = new Date();
+        let currentYear = today.getFullYear();
+        return currentYear - this.year
+    }
 }
 
 const student = new Student('Иван', 'Иванов', 2020);

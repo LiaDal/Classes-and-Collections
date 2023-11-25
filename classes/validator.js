@@ -7,6 +7,25 @@
  */
 class Validator {
 
+    isEmail(email) {
+        const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return regex.test(email);
+      }
+  
+      isDomain(domain) {
+        const regex = /[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,5}/;
+        return regex.test(domain);
+      }
+  
+      isDate(date) {
+        return !isNaN(new Date(date).getDate());
+      }
+  
+      isPhone(phone) {
+        const regex = /^([+]?[0-9\s-\(\)]{3,12})*$/;
+        return regex.test(phone);
+      }  
+
 }
 
 const validator = new Validator();

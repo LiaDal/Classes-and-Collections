@@ -7,6 +7,24 @@
 
 class MyString {
 
+    reverse(string){
+        if (arguments.length === 0) return undefined;
+        if(string === '') return ''  
+        return string.split('').reverse().join('');
+      }
+  
+      ucFirst(string){
+        if (arguments.length === 0) return undefined;
+        if(string === '') return ''
+        return string.trim().charAt(0).toUpperCase() + string.trim().slice(1);
+      }   
+  
+      ucWords(string){
+        if (arguments.length === 0) return undefined;
+        if(string === '') return ''
+        let str = string.replace(/\s+/g, ' ').trim();
+        return str.replace(/(^|\s)\S/g, ((a) =>  a.toUpperCase())).trim();
+      }   
 }
 
 const str = new MyString();
