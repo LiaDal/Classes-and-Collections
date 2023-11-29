@@ -6,7 +6,7 @@
  */
 
 export const makePairs = (object) => {
-    throw new Error(`Напишите здесь свое решение ${object}`);
+    return Object.entries(object);
 };
 
 const data = { a: 1, b: 2 };

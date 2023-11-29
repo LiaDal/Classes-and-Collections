@@ -8,7 +8,9 @@
  */
 
 export const without = (object, ...args) => {
-    throw new Error(`Напишите здесь свое решение ${object} ${args}`);
+    const newObject = { ...object };
+    args.forEach((arg) => { delete newObject[arg]});
+    return newObject;
 };
 
 const data = {a: 1, b: 2, c: 3};

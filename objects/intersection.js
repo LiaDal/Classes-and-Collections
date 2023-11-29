@@ -8,7 +8,15 @@
  */
 
 const intersection = (firstObject, secondObject) => {
-    throw new Error(`Напишите здесь свое решение ${firstObject}, ${secondObject}`);
+    const newObj = {};
+        
+    for (const key in firstObject) { 
+        if (key in secondObject && firstObject[key] === secondObject[key]) {
+            newObj[key] = firstObject[key];
+        }
+    }          
+    if(newObj.length === 0) return {}    
+    return newObj;
 };
 
 const data = {a: 1, b: 2};

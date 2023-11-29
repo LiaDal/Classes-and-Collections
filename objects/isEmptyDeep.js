@@ -9,8 +9,28 @@
  * @returns {boolean}
  */
 
+const flatObject = (obj) => {
+    function flat(o) {
+      return Object.entries(o).flatMap(([key, val]) => {
+        if (typeof val === 'object') return flat(val);
+  
+        return [
+          [key, val]
+        ];
+      });
+    }
+  
+    return Object.fromEntries(flat(obj));
+};
+
 export const isEmptyDeep = (object) => {
-    throw new Error(`Напишите здесь свое решение ${object}`);
+    let obj = flatObject(object)
+ const objectKeys = Object.keys(obj);
+    if (objectKeys.length === 0) {
+      return true;
+    }
+  
+    return !objectKeys.filter((key) => obj.key || obj.key === 0 || obj.key === false).length;
 };
 
 const data = {a: {b: undefined}};

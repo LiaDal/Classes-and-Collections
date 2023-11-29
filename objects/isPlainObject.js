@@ -8,7 +8,7 @@
  */
 
 export const isPlainObject = (element) => {
-    throw new Error(`Напишите здесь свое решение ${element}`);
+    return element instanceof Object ? true : false;
 };
 
 const data = { a: 1 };

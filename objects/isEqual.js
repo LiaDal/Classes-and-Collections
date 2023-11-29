@@ -8,7 +8,7 @@
  */
 
 export const isEqual = (firstObject, secondObject) => {
-    throw new Error(`Напишите здесь свое решение ${firstObject} ${secondObject}`);
+    return JSON.stringify(obj1)===JSON.stringify(obj2);
 };
 
 const data = {a: 1, b: 1};

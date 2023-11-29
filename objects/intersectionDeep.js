@@ -8,7 +8,21 @@
  */
 
 const intersectionDeep = (firstObject, secondObject) => {
-    throw new Error(`Напишите здесь свое решение ${firstObject}, ${secondObject}`);
+    return Object.assign(...Object.keys(object1).map(k => {
+        let temp;
+        if (!(k in object2)) {
+            return {};
+        }
+        if (object1[k] && typeof object1[k] === 'object' &&
+            object2[k] && typeof object2[k] === 'object') {
+            temp = intersectionDeep(object1[k], object2[k]);
+            return Object.keys(temp).length ? { [k]: temp } : {};
+        }
+        if (object1[k] === object2[k]) {
+           return { [k]: object1[k] };
+        }
+        return {};
+    }));
 };
 
 const data = {a: 1, b: {c: 3}};

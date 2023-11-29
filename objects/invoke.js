@@ -10,7 +10,14 @@
  */
 
 const invoke = (object, path, func, args) => {
-    throw new Error(`Напишите здесь свое решение ${object} ${path} ${func} ${args}`);
+  const splittedPath = path.split('.');
+
+  const result = splittedPath.reduce((acc, key) => {
+    acc = acc[key] ? acc[key] : object[key];
+    return acc;
+  }, {});
+
+  return Array.prototype[func].apply(result, args);
 };
 
 const data = {a: {b: [1, 2, 3]}}
